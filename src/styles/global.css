@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F9F9F9;
+  --color-secondary: #1A1A1A;
+  --color-highlight: #0EA5E9;
+  /* Sky Blue from logo */
+  --color-accent: #2563EB;
+  /* Deep Blue from logo */
+  --color-surface: #FFFFFF;
+  --color-error: #EF4444;
+
+  --font-heading: "Instrument Serif", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/*
+  The 4px Grid is inherent in Tailwind (p-1 = 4px).
+  Typography Scale (1.200) will be applied via utility classes or custom utilities if needed.
+  But standard Tailwind scale is close enough or can be customized.
+  Let's stick to standard utilities for now and customize if specific sizes are missing.
+*/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Base styles for standard elements to ensure consistency */
+a {
+  color: inherit;
+  text-decoration: none;
+}

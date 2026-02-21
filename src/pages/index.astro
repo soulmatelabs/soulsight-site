@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import LogTrap from '../components/LogTrap.astro';
+import RoleGrid from '../components/RoleGrid.astro';
+import Demo from '../components/Demo.tsx';
+import SovereignValidation from '../components/SovereignValidation.astro';
+import Conversion from '../components/Conversion.astro';
+---
+
+<BaseLayout title="SoulSight | Private AI Journaling">
+  <main class="w-full overflow-hidden">
+    <Hero />
+    <LogTrap />
+    <RoleGrid />
+    <Demo client:visible />
+    <SovereignValidation />
+    <Conversion />
+  </main>
+</BaseLayout>
