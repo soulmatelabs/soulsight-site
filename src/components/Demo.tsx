@@ -30,7 +30,7 @@ export default function Demo() {
     */
 
     return (
-        <section id="demo" class="py-32 bg-[var(--color-primary)] flex flex-col justify-center items-center">
+        <section id="demo" class="py-32 flex flex-col justify-center items-center bg-white relative z-10">
             <div class="w-full max-w-4xl px-6 text-center space-y-12">
                 <div class="space-y-4 animate-fade-in">
                     <h2 class="font-heading text-5xl md:text-6xl text-[var(--color-secondary)] leading-tight">
@@ -45,10 +45,10 @@ export default function Demo() {
                     <a
                         href="#external-demo-url"
                         id="reflect-cta"
-                        class="group relative inline-flex items-center justify-center px-12 py-5 font-body font-bold text-lg tracking-wide text-[var(--color-secondary)] bg-[var(--color-highlight)] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(61,242,165,0.4)]"
+                        class="group relative inline-flex items-center justify-center px-12 py-5 font-body font-bold text-lg tracking-wide text-white bg-[var(--color-accent)] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
                     >
                         <span class="relative z-10 uppercase">Reflect</span>
-                        <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                        <div class="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     </a>
 
                     <p class="text-xs text-gray-400 uppercase tracking-[0.2em]">

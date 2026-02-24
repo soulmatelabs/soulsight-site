@@ -1,0 +1,139 @@
+---
+const roles = [
+  {
+    id: "coach",
+    title: "Life Coach",
+    goal: "Accountability",
+    description: "A partner to translate your raw thoughts into a clear, actionable roadmap for self-actualization."
+  },
+  {
+    id: "mentor",
+    title: "Mentor",
+    goal: "Vision",
+    description: "Professional wisdom for emerging leaders seeking a senior perspective on long-term growth and career strategy."
+  },
+  {
+    id: "therapist",
+    title: "Therapist",
+    goal: "Healing",
+    description: "An empathic space to deconstruct emotional blocks and understand the 'why' behind your internal friction."
+  },
+  {
+    id: "friend",
+    title: "Friend",
+    goal: "Presence",
+    description: "A safe, low-pressure sanctuary to think out loud and receive validation for your unfiltered expressions."
+  },
+  {
+    id: "psychologist",
+    title: "Psychologist",
+    goal: "Structure",
+    description: "Pattern identification for analytical minds wanting to understand cognitive frameworks and structural mental clarity."
+  }
+];
+---
+<section id="demo" class="pt-12 pb-12 md:py-32 flex flex-col justify-center items-center bg-gradient-to-b from-[var(--color-primary)] to-white relative z-10">
+    <div class="w-full max-w-6xl px-6 text-center space-y-12">
+        
+        <!-- 1. "The Mirror" text -->
+        <div class="space-y-4 animate-fade-in">
+            <h2 class="font-heading text-5xl md:text-6xl text-[var(--color-secondary)] leading-tight">
+                The Mirror
+            </h2>
+            <p class="font-body text-xl text-gray-600 max-w-2xl mx-auto">
+                Experience near-instant clarity. Our specialized roles are designed to reflect your thoughts back with unprecedented depth and precision.
+            </p>
+        </div>
+
+        <!-- 2. The question and role grids -->
+        <div id="roles" class="pt-4 text-left mb-8">
+            <h3 class="font-heading text-3xl text-center mb-16 text-[var(--color-secondary)]">
+              Which kind of insights would help you more?
+            </h3>
+            <div id="role-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {roles.map((role) => (
+                <div 
+                  data-role={role.id}
+                  class="role-card group p-6 border border-gray-200 hover:border-[var(--color-highlight)] rounded-lg transition-all duration-300 hover:shadow-md cursor-pointer bg-white"
+                >
+                  <div class="flex flex-col h-full justify-between space-y-4">
+                    <div>
+                      <span class="block text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
+                        {role.goal}
+                      </span>
+                      <h4 class="font-heading text-2xl text-[var(--color-secondary)] group-hover:text-[var(--color-accent)] transition-colors mb-2">
+                        {role.title}
+                      </h4>
+                      <p class="text-sm text-gray-600 leading-relaxed">
+                        {role.description}
+                      </p>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-highlight)] text-sm font-bold select-indicator">
+                      Select Role →
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+        </div>
+
+        <!-- 3. The CTA -->
+        <div class="flex flex-col items-center space-y-4 pt-4">
+            <a
+                href="#external-demo-url"
+                id="reflect-cta"
+                class="group relative inline-flex items-center justify-center px-12 py-5 font-body font-bold text-lg tracking-wide text-white bg-[var(--color-accent)] rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
+            >
+                <span class="relative z-10 uppercase">Reflect</span>
+                <div class="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </a>
+            <p class="text-xs text-gray-400 uppercase tracking-[0.2em]">
+                External Interactive Experience
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+  .role-card.active {
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background-color: #F8FAFC;
+    transform: translateY(-4px);
+  }
+  
+  .role-card.active .select-indicator {
+    opacity: 100;
+    color: var(--color-accent);
+  }
+
+  .role-card.active h4 {
+    color: var(--color-accent);
+  }
+</style>
+
+<script>
+  const roleCards = document.querySelectorAll('.role-card');
+  const reflectCta = document.getElementById('reflect-cta') as HTMLAnchorElement;
+  let selectedRole = '';
+
+  roleCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active class from all
+      roleCards.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked
+      card.classList.add('active');
+      
+      // Update selected role
+      selectedRole = card.getAttribute('data-role') || '';
+      
+      // Update CTA URL
+      if (reflectCta) {
+        // Dummy URL structure as requested
+        reflectCta.href = `https://gemini.google.com/gem/soulsight-${selectedRole}`;
+      }
+    });
+  });
+</script>

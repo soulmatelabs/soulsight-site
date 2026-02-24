@@ -1,0 +1,71 @@
+---
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="bg-white/90 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+      <a href="/#invitation" class="flex items-center gap-2 group">
+        <img src="/favicon.svg" alt="SoulSight Logo" class="w-8 h-8 transition-transform group-hover:rotate-12" />
+        <span class="font-heading text-xl text-[#1A1A1A] tracking-tight">SoulSight</span>
+      </a>
+
+      <div class="hidden min-[781px]:flex items-center gap-8">
+        <a href="/#pivot" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Overview</a>
+        <a href="/#roles" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Roles</a>
+        <a href="/#stack" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Stack</a>
+        <a href="/developers/" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Developers</a>
+        <a href="/download/" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Download</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="/#demo" style="background-color: #1A1A1A !important; color: #FFFFFF !important;" class="px-5 py-2 text-xs font-bold rounded-full hover:bg-[#2563EB] hover:text-white transition-colors uppercase tracking-widest">
+          Try Demo
+        </a>
+        <button 
+          id="share-button-desktop"
+          class="hidden min-[781px]:flex w-9 h-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-[var(--color-accent)] transition-all"
+          aria-label="Share SoulSight"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+            <polyline points="16 6 12 2 8 6"></polyline>
+            <line x1="12" y1="2" x2="12" y2="15"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('navbar');
+  const shareBtn = document.getElementById('share-button-desktop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('py-4');
+      nav?.classList.remove('py-6');
+    } else {
+      nav?.classList.add('py-6');
+      nav?.classList.remove('py-4');
+    }
+  });
+
+  shareBtn?.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'SoulSight | Private AI Journaling',
+          text: 'Master your thoughts with on-device AI for data sovereignty.',
+          url: window.location.origin,
+        });
+      } catch (err) {
+        console.error('Share failed:', err);
+      }
+    } else {
+      // Fallback: Copy to clipboard
+      navigator.clipboard.writeText(window.location.origin);
+      alert('Link copied to clipboard!');
+    }
+  });
+</script>

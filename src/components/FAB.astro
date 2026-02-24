@@ -1,0 +1,108 @@
+---
+---
+<div id="mobile-fab-container" class="max-[780px]:block hidden fixed bottom-8 right-8 z-[60]">
+  <button 
+    id="fab-button"
+    class="w-14 h-14 bg-[var(--color-secondary)] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 active:scale-95 group overflow-hidden relative"
+    aria-label="Toggle Menu"
+  >
+    <!-- Burger Icon -->
+    <div id="fab-icon-burger" class="absolute transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </div>
+    <!-- Close Icon (Hidden by default) -->
+    <div id="fab-icon-close" class="absolute transform translate-y-20 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </div>
+  </button>
+
+  <!-- Mobile Menu -->
+  <div 
+    id="mobile-menu" 
+    class="absolute bottom-20 right-0 w-48 bg-white/90 backdrop-blur-xl border border-gray-100 rounded-3xl shadow-2xl p-4 flex flex-col gap-2 transform scale-90 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right"
+  >
+    <a href="/#invitation" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Home</a>
+    <a href="/#friction" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Overview</a>
+    <a href="/#roles" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Roles</a>
+    <a href="/#stack" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Stack</a>
+    <a href="/developers/" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Developers</a>
+    <div class="h-[1px] bg-gray-100 my-1"></div>
+    <a href="/download/" class="mobile-link px-4 py-3 text-sm font-bold text-white bg-[var(--color-accent)] hover:bg-[var(--color-secondary)] rounded-2xl transition-colors text-center shadow-lg shadow-blue-500/20">
+      Download App
+    </a>
+    <button id="mobile-share-link" class="px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors text-left flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+      Share Website
+    </button>
+  </div>
+</div>
+
+<script>
+  const fabButton = document.getElementById('fab-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const burgerIcon = document.getElementById('fab-icon-burger');
+  const closeIcon = document.getElementById('fab-icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const mobileShareLink = document.getElementById('mobile-share-link');
+
+  let isOpen = false;
+
+  const toggleMenu = () => {
+    isOpen = !isOpen;
+    
+    if (isOpen) {
+      mobileMenu?.classList.remove('scale-90', 'opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.add('scale-100', 'opacity-100');
+      burgerIcon?.classList.add('-translate-y-20');
+      closeIcon?.classList.remove('translate-y-20');
+      fabButton?.classList.add('bg-[var(--color-accent)]');
+    } else {
+      mobileMenu?.classList.add('scale-90', 'opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.remove('scale-100', 'opacity-100');
+      burgerIcon?.classList.remove('-translate-y-20');
+      closeIcon?.classList.add('translate-y-20');
+      fabButton?.classList.remove('bg-[var(--color-accent)]');
+    }
+  };
+
+  fabButton?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (isOpen && !mobileMenu?.contains(e.target as Node) && !fabButton?.contains(e.target as Node)) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu when a link is clicked
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isOpen) toggleMenu();
+    });
+  });
+
+  mobileShareLink?.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'SoulSight | Private AI Journaling',
+          text: 'Master your thoughts with on-device AI for data sovereignty.',
+          url: window.location.origin,
+        });
+      } catch (err) {
+        console.error('Share failed:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.origin);
+      alert('Link copied to clipboard!');
+    }
+    if (isOpen) toggleMenu();
+  });
+</script>

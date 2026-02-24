@@ -1,26 +1,88 @@
 ---
+import '@fontsource/caveat';
 ---
 
 <!-- Block B1: The Friction -->
-<section id="friction" class="py-32 bg-gray-200 text-gray-600 transition-colors duration-700">
-  <div class="max-w-4xl mx-auto px-4 md:px-0 md:ml-[25%] space-y-6">
-    <h3 class="font-heading text-4xl text-gray-800">
-      Your journal is a log, not a lever.
-    </h3>
-    <p class="font-body text-lg leading-relaxed max-w-2xl">
-      Traditional journaling is a passive record of events. You spend precious time writing, yet gain zero ROI on your thoughts. Without a system to compound your insights, your entries remain meaningless noise in a stack of forgotten notebooks. Your discipline deserves a higher return.
-    </p>
+<section id="friction" class="pt-12 pb-4 md:py-20 bg-gray-200 text-gray-600 transition-colors duration-700 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
+    <div class="space-y-6 md:ml-[15%]">
+      <h3 class="font-heading text-4xl text-gray-800">
+        Logging events is not beneficial.
+      </h3>
+      <p class="font-body text-lg leading-relaxed">
+        Journaling can become a passive record of events, especially for busy people. You spend precious time writing, yet gain almost zero ROI on your thoughts. 
+      </p>
+      <p class="font-body text-lg leading-relaxed">
+        Without a system to compound your insights, your entries remain meaningless noise in a stack of forgotten notebooks. 
+      </p>
+      <p class="font-body text-lg leading-relaxed">
+        Your discipline deserves a higher return.
+      </p>
+    </div>
+
+    <!-- The Boring Element -->
+    <div class="relative flex justify-center py-8 md:py-12">
+      <div class="w-full max-w-[320px] bg-[#FDFBF7] p-8 shadow-sm border border-[#E5E1D8] transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+        <div class="space-y-4">
+          <div class="h-2 w-1/2 bg-gray-100 rounded opacity-70"></div>
+          <div class="h-2 w-3/4 bg-gray-100 rounded opacity-70"></div>
+          <p class="font-['Caveat'] text-2xl text-[#5D5046] pt-4 leading-tight">
+            "I did this... <br/>
+            then that... <br/>
+            and then..."
+          </p>
+          <div class="h-2 w-2/3 bg-gray-100 rounded pt-2 opacity-70"></div>
+          <div class="h-2 w-1/2 bg-gray-100 rounded opacity-70"></div>
+        </div>
+      </div>
+      <!-- Decorative background noise 
+      <div class="absolute inset-0 -z-10 opacity-[0.9] select-none pointer-events-none">
+        <div class="font-mono text-[10px] break-all">
+          {Array.from({length: 50}).map(() => (
+            <div>[LOG] EVENT_ID_{Math.random().toString(36).substr(2, 9)} TIMESTAMP_{Date.now()} SUCCESS</div>
+          ))}
+        </div>
+      </div>-->
+    </div>
   </div>
 </section>
 
 <!-- Block B2: The Pivot -->
-<section id="pivot" class="py-32 bg-gradient-to-b from-gray-200 to-[var(--color-primary)] text-[var(--color-secondary)]">
-  <div class="max-w-4xl mx-auto px-4 md:px-0 md:ml-[25%] space-y-6">
-    <h3 class="font-heading text-4xl text-[var(--color-secondary)]">
-      Stop logging events. Start engineering clarity.
-    </h3>
-    <p class="font-body text-lg leading-relaxed max-w-2xl">
-      SoulSight transforms passive recording into active self-mastery. By leveraging local AI, we turn your daily noise into an actionable roadmap for life. It’s not about writing more; it’s about extracting the signal from the noise to drive personal growth and mental ROI.
-    </p>
+<section id="pivot" class="pt-4 pb-6 md:py-20 bg-gradient-to-b from-gray-200 to-[var(--color-primary)] text-[var(--color-secondary)] overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <div class="space-y-6">
+      <h3 class="font-heading text-4xl text-[var(--color-secondary)]">
+        Stop logging events. <br/>Start engineering clarity.
+      </h3>
+      <p class="font-body text-lg leading-relaxed">
+        SoulSight transforms passive recording into active self-discovery. By leveraging local AI, we turn your daily noise into an actionable roadmap for life. 
+      </p>
+      <p class="font-body text-lg leading-relaxed">
+        It’s not about writing more; it’s about extracting the signal from the noise to drive personal growth and mental ROI.
+      </p>
+    </div>
+
+    <div class="bg-white/50 backdrop-blur-sm border border-white/20 p-8 md:p-12 rounded-[2.5rem] space-y-8 flex flex-col items-center text-center shadow-xl">
+      <div class="flex justify-center">
+        <!-- Visual Indicator: Simple CSS Representation of a Vault/Sanctuary -->
+        <div class="w-24 h-24 border-2 border-[var(--color-secondary)] rounded-full flex items-center justify-center relative bg-white/30">
+          <div class="w-16 h-16 border border-gray-200 rounded-full flex items-center justify-center">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[var(--color-highlight)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+             </svg>
+          </div>
+          <div class="absolute -right-1 top-1 w-4 h-4 bg-[var(--color-accent)] rounded-full animate-pulse border-2 border-white"></div>
+        </div>
+      </div>
+      
+      <div class="space-y-4">
+        <h4 class="font-heading text-3xl text-[var(--color-secondary)]">
+          Your Sanctuary is Sovereign.
+        </h4>
+        <p class="font-body text-gray-700 leading-relaxed text-balance">
+          Your thoughts are yours alone. All journal entries and insights are processed on-device with local AI. Nothing is sent to the cloud. Ever.
+        </p>
+      </div>
+    </div>
   </div>
 </section>

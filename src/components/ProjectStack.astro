@@ -1,0 +1,52 @@
+---
+const features = [
+  {
+    title: "The Private Brain",
+    tech: "Local LLMs",
+    description: "Inference happens on your device, not in the cloud. Your thoughts never leave your device.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`
+  },
+  {
+    title: "Compound Memory",
+    tech: "Vector Databases",
+    description: "Every insight is indexed as a vector. SoulSight doesn't just store text; it maps the semantics of your growth.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>`
+  },
+  {
+    title: "Signal Retrieval",
+    tech: "Local RAG",
+    description: "Retrieval-Augmented Generation scans your past to illuminate your present. Stop repeating old mistakes.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`
+  }
+];
+---
+
+<section id="stack" class="py-16 md:py-32 bg-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="mb-20 space-y-4">
+      <h2 class="font-heading text-5xl md:text-6xl text-[var(--color-secondary)]">The Sovereign Stack</h2>
+      <p class="font-body text-xl text-gray-500 max-w-2xl uppercase tracking-widest text-sm">Hardware-level privacy meets advanced intelligence.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {features.map((f) => (
+        <div class="group space-y-6 p-8 rounded-2xl border border-gray-100 hover:border-[var(--color-highlight)] transition-all duration-500 hover:shadow-2xl hover:shadow-sky-100 bg-white">
+          <div class="w-16 h-16 bg-sky-50 rounded-xl flex items-center justify-center text-[var(--color-highlight)] group-hover:bg-[var(--color-highlight)] group-hover:text-white transition-colors duration-500">
+            <Fragment set:html={f.icon} />
+          </div>
+          <div class="space-y-2">
+            <span class="text-[10px] uppercase tracking-[0.3em] text-[var(--color-highlight)] font-bold">{f.tech}</span>
+            <h3 class="font-heading text-3xl text-[var(--color-secondary)]">{f.title}</h3>
+            <p class="font-body text-gray-600 leading-relaxed">
+              {f.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <!-- Subtle Background Decor -->
+  <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-sky-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+</section>

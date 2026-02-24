@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "February 13, 2026";
+---
+
+<BaseLayout title="Terms of Service | SoulSight">
+  <Navbar />
+  <main class="pt-32 pb-24 bg-[var(--color-primary)] min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 space-y-16">
+      <!-- Header -->
+      <header class="space-y-4">
+        <h1 class="font-heading text-5xl md:text-7xl text-[var(--color-secondary)]">Terms of Service</h1>
+        <p class="font-body text-gray-500 uppercase tracking-widest text-sm">Last Updated: {lastUpdated}</p>
+      </header>
+
+      <!-- Core Highlights -->
+      <section id="essentials" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white/50 backdrop-blur-sm border border-white/20 p-8 rounded-3xl space-y-4 shadow-sm">
+          <h2 class="font-heading text-2xl text-[var(--color-secondary)]">Eligibility</h2>
+          <p class="font-body text-gray-600 leading-relaxed">
+            SoulSight is intended for users <strong>18 years of age or older</strong>. By using the app, you warrant that you meet this requirement.
+          </p>
+        </div>
+        <div class="bg-white/50 backdrop-blur-sm border border-white/20 p-8 rounded-3xl space-y-4 shadow-sm">
+          <h2 class="font-heading text-2xl text-[var(--color-secondary)]">Beta Status</h2>
+          <p class="font-body text-gray-600 leading-relaxed">
+            The project is currently in <strong>Beta</strong>. It is experimental and may contain bugs. Use of the service is at your own risk.
+          </p>
+        </div>
+      </section>
+
+      <!-- Detailed Points -->
+      <article class="space-y-12 font-body text-gray-700 leading-relaxed">
+        <div id="ai-disclaimer" class="space-y-4 border-l-4 border-[var(--color-accent)] pl-6 py-2">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">1. AI Intelligence Disclaimer</h3>
+          <p>
+            SoulSight provides AI-generated reflections and insights. You acknowledge that these outputs are <strong>probabilistic</strong> and should not be treated as medical, psychological, or legal advice. <strong>SoulSight is not a replacement for therapy or professional counseling.</strong>
+          </p>
+        </div>
+
+        <div id="sideloading" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">2. Distribution & Sideloading</h3>
+          <p>
+            If you install SoulSight via APK or sideloading, you assume all risks associated with third-party distribution. We only guarantee the security integrity of versions downloaded through official store channels or our verified GitHub releases.
+          </p>
+        </div>
+
+        <div id="intellectual-property" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">3. Intellectual Property & Licensing</h3>
+          <p>
+            All software, AI model architecture, and brand assets are the exclusive property of SoulMate Labs. 
+          </p>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-3">
+            <p class="font-bold text-[var(--color-secondary)] text-sm uppercase tracking-widest">Source Available Model</p>
+            <p class="text-sm text-gray-600">
+              The SoulSight core source code is distributed under the <strong>Polyform Noncommercial License</strong>. This means you are free to view, study, and modify the code for personal use. However, any commercial use, redistribution for profit, or creation of derivative commercial services by third parties is strictly prohibited.
+            </p>
+            <p class="text-sm text-gray-600">
+              SoulMate Labs reserves the right to release official commercial versions (e.g., via App Stores) containing additional features or integrated paid services.
+            </p>
+          </div>
+        </div>
+
+        <div id="liability" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">4. Limitation of Liability</h3>
+          <p>
+            To the maximum extent permitted by law, SoulMate Labs is not liable for real-world outcomes, decisions made based on AI output, or data loss occurring during device transfers.
+          </p>
+        </div>
+
+        <div id="master-terms" class="pt-8 border-t border-gray-200">
+          <p class="text-sm text-gray-500">
+            This summary covers the essentials for SoulSight users. For the complete legal agreement, please consult the 
+            <a href="https://soulmatelabs.github.io/soulmate-labs/terms" target="_blank" class="text-[var(--color-accent)] font-bold hover:underline">Master Terms of Service</a>.
+          </p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

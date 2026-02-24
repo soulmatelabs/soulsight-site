@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "February 13, 2026";
+---
+
+<BaseLayout title="Privacy Policy | SoulSight">
+  <Navbar />
+  <main class="pt-32 pb-24 bg-[var(--color-primary)] min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 space-y-16">
+      <!-- Header -->
+      <header class="space-y-4">
+        <h1 class="font-heading text-5xl md:text-7xl text-[var(--color-secondary)]">Privacy Policy</h1>
+        <p class="font-body text-gray-500 uppercase tracking-widest text-sm">Last Updated: {lastUpdated}</p>
+      </header>
+
+      <!-- TL;DR / Layered Summary -->
+      <section id="summary" class="bg-white/50 backdrop-blur-sm border border-white/20 p-8 rounded-3xl space-y-6 shadow-sm">
+        <h2 class="font-heading text-3xl text-[var(--color-secondary)]">The SoulSight Privacy Promise</h2>
+        <p class="font-body text-lg text-gray-700 leading-relaxed">
+          SoulSight is built on the principle of <strong>Data Sovereignty</strong>. Unlike traditional journaling apps, we don't want your data—we want you to own it.
+        </p>
+        <ul class="space-y-4 font-body text-gray-600">
+          <li class="flex gap-3">
+            <span class="text-[var(--color-accent)] font-bold">✓</span>
+            <span><strong>Local-Only Processing:</strong> Your journal entries never leave your device. AI processing happens locally.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-[var(--color-accent)] font-bold">✓</span>
+            <span><strong>No Cloud Storage by Default:</strong> We do not store your private reflections on our servers.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-[var(--color-accent)] font-bold">✓</span>
+            <span><strong>Zero AI Training:</strong> Your content is never used to train our models.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Detailed Points -->
+      <article class="space-y-12 font-body text-gray-700 leading-relaxed">
+        <div id="data-collection" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">1. What We Collect</h3>
+          <p>
+            To keep SoulSight functional and secure, we collect minimal technical metadata: anonymous crash logs, app versions, and basic usage frequency. This data is used strictly for technical optimization and cannot be traced back to your personal journal content.
+          </p>
+        </div>
+
+        <div id="ai-processing" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">2. Local AI & Intelligence</h3>
+          <p>
+            All "The Mirror" roles and insights are generated via on-device Large Language Models (LLMs). If you opt-in to advanced features that require cloud compute, your data is transmitted in an anonymized state and is never retained by our providers for training purposes.
+          </p>
+        </div>
+
+        <div id="data-retention" class="space-y-4">
+          <h3 class="font-heading text-2xl text-[var(--color-secondary)] uppercase tracking-tight">3. Data Retention</h3>
+          <p>
+            Since your data is local, deletion is your responsibility. If you delete the app or use the "Clear Data" feature, your entries are wiped permanently. We purge inactive server-linked accounts after 12 months.
+          </p>
+        </div>
+
+        <div id="master-policy" class="pt-8 border-t border-gray-200">
+          <p class="text-sm text-gray-500">
+            This is a specialized summary for SoulSight. For the full legal framework governing all SoulMate Labs services, please review our 
+            <a href="https://soulmatelabs.github.io/soulmate-labs/privacy" target="_blank" class="text-[var(--color-accent)] font-bold hover:underline">Master Privacy Policy</a>.
+          </p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
