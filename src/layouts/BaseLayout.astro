@@ -3,18 +3,25 @@ import '../styles/global.css';
 import '@fontsource/instrument-serif';
 import '@fontsource/inter';
 import FAB from '../components/FAB.astro';
+import JsonLD from '../components/JsonLD.astro';
 
 interface Props {
   title: string;
-  description?: string;
-  image?: string;
+  description: string;
+  image: string;
+  ogType?: string;
 }
 
 const { 
   title, 
-  description = "Private AI Journaling for Data Sovereignty & Mental ROI.",
-  image = "/og-image.jpg"
+  description,
+  image,
+  ogType = 'website',
 } = Astro.props;
+
+const siteName = "SoulSight";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -28,9 +35,23 @@ const {
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={ogImageURL.href} />
+    <meta property="og:type" content={ogType} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL.href} />
+
+    <JsonLD title={title} description={description} />
     
   </head>
   <body class="antialiased selection:bg-highlight selection:text-secondary">

@@ -12,22 +12,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-            <!-- Uptodown -->
-            <a href="https://soulsight.en.uptodown.com/android" target="_blank" class="flex flex-col items-center p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 group">
-                <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--color-accent)] transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[var(--color-secondary)] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                </div>
-                <h3 class="font-heading text-2xl text-[var(--color-secondary)] mb-2">Android</h3>
-                <p class="text-sm text-gray-500 mb-6">via Uptodown</p>
-                <span class="px-6 py-2 bg-[var(--color-secondary)] text-white text-xs font-bold rounded-full uppercase tracking-widest group-hover:bg-[var(--color-accent)] transition-colors">
-                    Download APK
-                </span>
-            </a>
-
             <!-- GitHub -->
             <a href="https://github.com/soulmatelabs/soulsight/releases" target="_blank" class="flex flex-col items-center p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 group">
                 <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#24292F] transition-colors">
@@ -41,6 +25,22 @@
                     Get Releases
                 </span>
             </a>
+
+            <!-- Uptodown -->
+            <div class="flex flex-col items-center p-8 bg-gray-50/50 rounded-3xl border border-dashed border-gray-200 opacity-70 grayscale transition-all duration-300">
+                <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <h3 class="font-heading text-2xl text-gray-400 mb-2">Android</h3>
+                <p class="text-sm text-gray-400 mb-6">Coming Soon</p>
+                <span class="px-6 py-2 border border-gray-200 text-gray-400 text-xs font-bold rounded-full uppercase tracking-widest cursor-not-allowed">
+                    Unavailable
+                </span>
+            </div>
 
             <!-- Google Play Store -->
             <div class="flex flex-col items-center p-8 bg-gray-50/50 rounded-3xl border border-dashed border-gray-200 opacity-70 grayscale transition-all duration-300">

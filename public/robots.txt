@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soulmatelabs.github.io/soulsight-site/sitemap-index.xml

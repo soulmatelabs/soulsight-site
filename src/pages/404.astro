@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="404: Not Found | SoulSight"
+  description="The page you were looking for could not be found."
+  image="/favicon.svg"
+>
+  <Navbar />
+  <main class="pt-32 pb-24 bg-[var(--color-primary)] min-h-screen flex items-center justify-center">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <header class="space-y-4">
+        <h1 class="font-heading text-8xl md:text-9xl text-[var(--color-secondary)]">404</h1>
+        <p class="font-body text-gray-400 text-lg md:text-xl">
+          It seems you've wandered off the path.
+        </p>
+      </header>
+      <div class="mt-12">
+        <a href="/download" id="404-back-home" class="px-8 py-4 bg-[var(--color-accent)] text-white font-bold rounded-full shadow-lg shadow-blue-500/20 hover:scale-105 transition-all duration-300">
+          Get early access
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
