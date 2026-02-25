@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 ---
 <div id="mobile-fab-container" class="max-[780px]:block hidden fixed bottom-8 right-8 z-[60]">
   <button 
@@ -25,13 +26,13 @@
     id="mobile-menu" 
     class="absolute bottom-20 right-0 w-48 bg-white/90 backdrop-blur-xl border border-gray-100 rounded-3xl shadow-2xl p-4 flex flex-col gap-2 transform scale-90 opacity-0 pointer-events-none transition-all duration-300 origin-bottom-right"
   >
-    <a href="/#invitation" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Home</a>
-    <a href="/#friction" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Overview</a>
-    <a href="/#roles" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Roles</a>
-    <a href="/#stack" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Stack</a>
-    <a href="/developers/" class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Developers</a>
+    <a href=`${base}/#invitation` class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Home</a>
+    <a href=`${base}/#friction` class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Overview</a>
+    <a href=`${base}/#roles` class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Roles</a>
+    <a href=`${base}/#stack` class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Stack</a>
+    <a href=`${base}/developers/` class="mobile-link px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors">Developers</a>
     <div class="h-[1px] bg-gray-100 my-1"></div>
-    <a href="/download/" class="mobile-link px-4 py-3 text-sm font-bold text-white bg-[var(--color-accent)] hover:bg-[var(--color-secondary)] rounded-2xl transition-colors text-center shadow-lg shadow-blue-500/20">
+    <a href=`${base}/download/` class="mobile-link px-4 py-3 text-sm font-bold text-white bg-[var(--color-accent)] hover:bg-[var(--color-secondary)] rounded-2xl transition-colors text-center shadow-lg shadow-blue-500/20">
       Download App
     </a>
     <button id="mobile-share-link" class="px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-2xl transition-colors text-left flex items-center gap-2">
@@ -93,7 +94,7 @@
       try {
         await navigator.share({
           title: 'SoulSight | Private AI Journaling',
-          text: 'Master your thoughts with on-device AI for data sovereignty.',
+          text: 'Master your thoughts with on-device AI-enhanced journaling.',
           url: window.location.origin,
         });
       } catch (err) {

@@ -10,6 +10,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://soulmatelabs.github.io/soulsight-site/',
+  base: '/soulsight-site',
   output: 'static', // Remove this once the dynamic on-site demo is live
   vite: {
     plugins: [tailwindcss()]

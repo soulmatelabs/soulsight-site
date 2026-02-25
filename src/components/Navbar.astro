@@ -1,24 +1,25 @@
 ---
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 ---
 
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
   <div class="max-w-6xl mx-auto px-6">
     <div class="bg-white/90 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
-      <a href="/#invitation" class="flex items-center gap-2 group">
-        <img src="/favicon.svg" alt="SoulSight Logo" class="w-8 h-8 transition-transform group-hover:rotate-12" />
+      <a href=`${base}/#invitation` class="flex items-center gap-2 group">
+        <img src=`${base}/favicon.svg` alt="SoulSight Logo" class="w-8 h-8 transition-transform group-hover:rotate-12" />
         <span class="font-heading text-xl text-[#1A1A1A] tracking-tight">SoulSight</span>
       </a>
 
       <div class="hidden min-[781px]:flex items-center gap-8">
-        <a href="/#pivot" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Overview</a>
-        <a href="/#roles" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Roles</a>
-        <a href="/#stack" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Stack</a>
-        <a href="/developers/" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Developers</a>
-        <a href="/download/" class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Download</a>
+        <a href=`${base}/#pivot` class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Overview</a>
+        <a href=`${base}/#roles` class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Roles</a>
+        <a href=`${base}/#stack` class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Stack</a>
+        <a href=`${base}/developers/` class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Developers</a>
+        <a href=`${base}/download/` class="text-sm font-body font-medium text-gray-700 hover:text-[#0EA5E9] transition-colors">Download</a>
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="/#demo" style="background-color: #1A1A1A !important; color: #FFFFFF !important;" class="px-5 py-2 text-xs font-bold rounded-full hover:bg-[#2563EB] hover:text-white transition-colors uppercase tracking-widest">
+        <a href=`${base}/#demo` style="background-color: #1A1A1A !important; color: #FFFFFF !important;" class="px-5 py-2 text-xs font-bold rounded-full hover:bg-[#2563EB] hover:text-white transition-colors uppercase tracking-widest">
           Try Demo
         </a>
         <button 

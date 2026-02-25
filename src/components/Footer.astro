@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -6,8 +7,8 @@ const currentYear = new Date().getFullYear();
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 md:col-span-2 space-y-6">
-                <a href="/" class="flex items-center gap-2 group w-max">
-                    <img src="/favicon.svg" alt="SoulSight Logo" class="w-10 h-10 transition-transform group-hover:rotate-12" loading="lazy" />
+                <a href=`${base}/` class="flex items-center gap-2 group w-max">
+                    <img src=`${base}/favicon.svg` alt="SoulSight Logo" class="w-10 h-10 transition-transform group-hover:rotate-12" loading="lazy" />
                     <span class="font-heading text-3xl text-white tracking-tight">SoulSight</span>
                 </a>
                 <p class="font-body text-gray-400 max-w-sm leading-relaxed">
@@ -19,10 +20,10 @@ const currentYear = new Date().getFullYear();
             <div class="space-y-6">
                 <h4 class="font-heading text-xl text-white">Project</h4>
                 <ul class="space-y-3">
-                    <li><a href="/#pivot" class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Overview</a></li>
-                    <li><a href="/#stack" class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Tech Stack</a></li>
-                    <li><a href="/developers" class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Developers</a></li>
-                    <li><a href="/#demo" class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Demo</a></li>
+                    <li><a href=`${base}/#pivot` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Overview</a></li>
+                    <li><a href=`${base}/#stack` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Tech Stack</a></li>
+                    <li><a href=`${base}/developers` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Developers</a></li>
+                    <li><a href=`${base}/#demo` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Demo</a></li>
                 </ul>
             </div>
 
@@ -41,8 +42,8 @@ const currentYear = new Date().getFullYear();
                 &copy; {currentYear} <a href="https://soulmatelabs.github.io/soulmate-labs/">SoulMate Labs</a> - SoulSight Project. Source Available - Polyform Noncommercial.
             </p>
             <div class="flex gap-8">
-                <a href="/privacy" class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">Privacy Policy</a>
-                <a href="/terms" class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">Terms</a>
+                <a href=`${base}/privacy` class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">Privacy Policy</a>
+                <a href=`${base}/terms` class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">Terms</a>
             </div>
         </div>
     </div>
