@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
 ---
@@ -7,8 +8,15 @@ const currentYear = new Date().getFullYear();
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-1 md:col-span-2 space-y-6">
-                <a href=`${base}/` class="flex items-center gap-2 group w-max">
-                    <img src=`${base}/favicon.svg` alt="SoulSight Logo" class="w-10 h-10 transition-transform group-hover:rotate-12" loading="lazy" />
+                <a href="#main-content" class="flex items-center gap-2 group w-max">
+                    <Image 
+                        src=`${base}/favicon.svg` 
+                        alt="" 
+                        width={40} 
+                        height={40} 
+                        loading="lazy" 
+                        class="w-10 h-10 transition-transform group-hover:rotate-12" 
+                    />
                     <span class="font-heading text-3xl text-white tracking-tight">SoulSight</span>
                 </a>
                 <p class="font-body text-gray-400 max-w-sm leading-relaxed">
@@ -20,10 +28,10 @@ const currentYear = new Date().getFullYear();
             <div class="space-y-6">
                 <h4 class="font-heading text-xl text-white">Project</h4>
                 <ul class="space-y-3">
-                    <li><a href=`${base}/#pivot` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Overview</a></li>
+                    <li><a href=`${base}/#demo` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Overview</a></li>
                     <li><a href=`${base}/#stack` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Tech Stack</a></li>
                     <li><a href=`${base}/developers` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Developers</a></li>
-                    <li><a href=`${base}/#demo` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Demo</a></li>
+                    <li><a href=`${base}/download` class="text-gray-400 hover:text-[#0EA5E9] transition-colors">Download</a></li>
                 </ul>
             </div>
 

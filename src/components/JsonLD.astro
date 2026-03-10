@@ -6,12 +6,39 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-const jsonLD = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": title,
-  "description": description
-};
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://soulmatelabs.github.io/soulsight-site/';
+
+const jsonLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": Astro.url.href
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SoulSight",
+    "operatingSystem": "Android, iOS, Windows, macOS, Linux",
+    "applicationCategory": "LifestyleApplication, ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Sovereign AI-enhanced journaling for data sovereignty and mental ROI. Processed entirely on-device.",
+    "softwareVersion": "0.0.1",
+    "sameAs": [
+      "https://github.com/soulmatelabs/soulsight"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "SoulMate Labs",
+      "url": "https://soulmatelabs.github.io/soulmate-labs/"
+    }
+  }
+];
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />

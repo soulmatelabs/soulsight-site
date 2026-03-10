@@ -1,17 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navbar from '../components/Navbar.astro';
-import DeveloperHub from '../components/DeveloperHub.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import DeveloperHub from '@components/DeveloperHub.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <BaseLayout 
-  title="Developers | SoulSight Open Core & Community Driven"
+  title="Developers | SoulSight Source Available & Community Driven"
   description="Collaborate with us to improve SoulSight and be part of the community. We look forward to work with you."
   image="/favicon.svg"
 >
   <Navbar />
-  <main class="w-full overflow-hidden">
+  <main id="main-content" class="w-full overflow-hidden">
     <DeveloperHub />
   </main>
   <Footer />
